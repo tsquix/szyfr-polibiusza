@@ -7,12 +7,7 @@ let iloscKolumn;
 let keyOrder = [];
 let ilePustych = 0;
 const keyToArr = function () {
-  let tmp;
-  tmp = klucz.split("");
-
-  for (let i = 0; i < klucz.length; i++) {
-    keyArr[i] = tmp[i];
-  }
+  keyArr = [...klucz];
 };
 
 const alfabetInputAppend = function () {
@@ -76,6 +71,7 @@ const szyfrowanie = function () {
       klucz = "klucz";
     }
     ilePustych = 0;
+
     alfabet = [
       //      0    1    2    3    4    5    6
       /*0*/ ["a", "ą", "b", "c", "ć", "d", "e"],
@@ -303,12 +299,7 @@ const funkcjadeszyfracji = function () {
   let keyArr2 = [];
 
   const keyToArr2 = function () {
-    let tmp;
-    tmp = klucz.split("");
-
-    for (let i = 0; i < klucz.length; i++) {
-      keyArr2[i] = tmp[i];
-    }
+    keyArr2 = [...klucz];
   };
   keyToArr2();
 
@@ -340,7 +331,6 @@ const funkcjadeszyfracji = function () {
 
   let tablicaDoOdszyfr = [];
   const usunPierwszyRow = function () {
-    let doStringa = [];
     let z = 0;
 
     for (let i = 1; i < extractedColumn3.length; i++) {
